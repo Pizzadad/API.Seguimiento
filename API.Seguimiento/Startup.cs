@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -15,7 +16,9 @@ using Persistence;
 
 using MediatR;
 using Application.SeguimientoCRUD;
+using Logger;
 using Microsoft.OpenApi.Models;
+using Newtonsoft.Json.Converters;
 using Persistence.Context;
 
 namespace API.Seguimiento
@@ -39,7 +42,13 @@ namespace API.Seguimiento
 
             services.AddMediatR(Assembly.Load("Application"));
 
-            services.AddControllers();
+            services.AddControllers()
+                .AddJsonOptions(options2 =>
+                    options2.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()))
+                .AddNewtonsoftJson(options1 =>
+                    options1.SerializerSettings.Converters.Add(new StringEnumConverter()))
+                .AddNewtonsoftJson(options =>
+                    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
             services.AddSwaggerGen(c =>
             {
@@ -52,12 +61,16 @@ namespace API.Seguimiento
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            loggerFactory.AddSyslog(
+                Configuration.GetValue<string>("Papertrail:host"),
+                Configuration.GetValue<int>("Papertrail:port"));
 
             app.UseRouting();
 

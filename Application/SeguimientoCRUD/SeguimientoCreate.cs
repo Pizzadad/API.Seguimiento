@@ -22,14 +22,13 @@ namespace Application.SeguimientoCRUD
         public int documentosemitidos { get; set; }
 
         [DataType(DataType.DateTime)]
-        public DateTime? fechaemision { get; set; }
-
-        [Required(ErrorMessage = "Campo requerido", AllowEmptyStrings = false)]
-        [DataType(DataType.DateTime)]
-        public DateTime fechaenvio { get; set; }
+        public DateTimeOffset? fechaemision { get; set; }
 
         public decimal? importe { get; set; }
 
+        /// <summary>
+        /// 1=PEN, 2=USD
+        /// </summary>
         [Range(0, int.MaxValue)]
         public int? monedaid { get; set; }
 
@@ -47,8 +46,7 @@ namespace Application.SeguimientoCRUD
         public string sysver { get; set; }
 
         [Required(ErrorMessage = "Campo requerido", AllowEmptyStrings = false)]
-        [Range(0, int.MaxValue)]
-        public int tipodocumentoid { get; set; }
+        public TipoDocumento tipodoc { get; set; }
 
         [MaxLength(500, ErrorMessage = "Máximo de 500 caracteres")]
         public string urlservice { get; set; }
@@ -58,6 +56,8 @@ namespace Application.SeguimientoCRUD
 
         [Length(100)]
         public byte[] xmlbinary { get; set; }
+        [Required]
+        public EstadoSunat Estado { get; set; }
 
         public class Handler : IRequestHandler<SeguimientoCreate, int>
         {
@@ -75,13 +75,17 @@ namespace Application.SeguimientoCRUD
                 if (e.documentosemitidos <= 0)
                     e.documentosemitidos = 1;
 
+                e.tipodocumentoid = request.tipodoc.ToString();
+                e.fechaenvio = DateTime.UtcNow - TimeSpan.FromHours(5);
+                e.estadoenvio = request.Estado.ToString();
+
                 await _bdContext.seguimiento.AddAsync(e, cancellationToken);
 
                 var valor = await _bdContext.SaveChangesAsync(cancellationToken);
 
                 if (valor > 0)
                 {
-                    return valor;
+                    return e.id;
                 }
 
                 throw new Exception("No se guardaron los cambios");

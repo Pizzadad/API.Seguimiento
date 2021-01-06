@@ -10,7 +10,7 @@ namespace Persistence.Domain
         public string username { get; set; }
         public string sysver { get; set; }
         public string pcname { get; set; }
-        public int tipodocumentoid { get; set; }
+        public string tipodocumentoid { get; set; }
         public string serie { get; set; }
         public string correlativo { get; set; }
         public int? monedaid { get; set; }
@@ -20,5 +20,6 @@ namespace Persistence.Domain
         public int documentosemitidos { get; set; }
         public byte[] xmlbinary { get; set; }
         public string urlservice { get; set; }
+        public string estadoenvio { get; set; }
     }
 }

@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Application.SeguimientoCRUD;
+using Logger;
+using Microsoft.Extensions.Logging;
 
 namespace API.Seguimiento.Controllers
 {
@@ -14,10 +16,12 @@ namespace API.Seguimiento.Controllers
     public class SeguimientoController : ControllerBase
     {
         private readonly IMediator _mediator;
+        private readonly ILogger<SeguimientoController> _logger;
 
-        public SeguimientoController(IMediator mediator)
+        public SeguimientoController(IMediator mediator, ILogger<SeguimientoController> logger)
         {
             _mediator = mediator;
+            _logger = logger;
         }
 
         [HttpPost("RegistrarSeguimiento")]
@@ -28,11 +32,13 @@ namespace API.Seguimiento.Controllers
         {
             try
             {
+                _logger.LogInformation($"RegistrarSeguimiento>> {data.rucempresa}-{data.fechaemision}-{data.tipodoc}-{data.serie}-{data.correlativo} ({data.documentosemitidos})");
                 var id = await _mediator.Send(data);
                 return Ok(id);
             }
             catch (Exception e)
             {
+                LocalExceptionLogger.EscribirLog(e);
                 Console.WriteLine(e);
                 throw;
             }
