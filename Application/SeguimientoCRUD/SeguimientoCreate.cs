@@ -1,35 +1,65 @@
-﻿using Entities;
-using MediatR;
+﻿using MediatR;
 using Persistence;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Common;
+using Persistence.Context;
+using Persistence.Domain;
 
 namespace Application.SeguimientoCRUD
 {
-    public class SeguimientoCreate
+    public class SeguimientoCreate : IRequest<int>
     {
+        [MaxLength(8, ErrorMessage = "Máximo de 8 caracteres")]
+        public string correlativo { get; set; }
 
-        public class Create : IRequest
-        {
-            public string Rucempresa { get; set; }
+        [Required(ErrorMessage = "Campo requerido", AllowEmptyStrings = false)]
+        [Range(0, int.MaxValue)]
+        public int documentosemitidos { get; set; }
 
-            public int Tipodocumentoid { get; set; }
+        [DataType(DataType.DateTime)]
+        public DateTime? fechaemision { get; set; }
 
-            public string Serie { get; set; }
+        [Required(ErrorMessage = "Campo requerido", AllowEmptyStrings = false)]
+        [DataType(DataType.DateTime)]
+        public DateTime fechaenvio { get; set; }
 
-            public string Correlativo { get; set; }
+        public decimal? importe { get; set; }
 
-            public int Monedaid { get; set; }
+        [Range(0, int.MaxValue)]
+        public int? monedaid { get; set; }
 
-            public decimal Importe { get; set; }
-            
-            public int Documentosemitidos { get; set; }
-        }
+        [MaxLength(300, ErrorMessage = "Máximo de 300 caracteres")]
+        public string pcname { get; set; }
 
-        public class Handler : IRequestHandler<Create>
+        [Required(ErrorMessage = "Campo requerido", AllowEmptyStrings = false)]
+        [MaxLength(11, ErrorMessage = "Máximo de 11 caracteres")]
+        public string rucempresa { get; set; }
+
+        [MaxLength(4, ErrorMessage = "Máximo de 4 caracteres")]
+        public string serie { get; set; }
+
+        [MaxLength(20, ErrorMessage = "Máximo de 20 caracteres")]
+        public string sysver { get; set; }
+
+        [Required(ErrorMessage = "Campo requerido", AllowEmptyStrings = false)]
+        [Range(0, int.MaxValue)]
+        public int tipodocumentoid { get; set; }
+
+        [MaxLength(500, ErrorMessage = "Máximo de 500 caracteres")]
+        public string urlservice { get; set; }
+
+        [MaxLength(250, ErrorMessage = "Máximo de 250 caracteres")]
+        public string username { get; set; }
+
+        [Length(100)]
+        public byte[] xmlbinary { get; set; }
+
+        public class Handler : IRequestHandler<SeguimientoCreate, int>
         {
             private readonly BdContext _bdContext;
 
@@ -37,34 +67,25 @@ namespace Application.SeguimientoCRUD
             {
                 _bdContext = bdContext;
             }
-            public async Task<Unit> Handle(Create request, CancellationToken cancellationToken)
+
+            public async Task<int> Handle(SeguimientoCreate request, CancellationToken cancellationToken)
             {
+                var e = request.MapTo<seguimiento>();
 
-                var seguimiento = new Seguimientos
+                if (e.documentosemitidos <= 0)
+                    e.documentosemitidos = 1;
+
+                await _bdContext.seguimiento.AddAsync(e, cancellationToken);
+
+                var valor = await _bdContext.SaveChangesAsync(cancellationToken);
+
+                if (valor > 0)
                 {
-                    Rucempresa = request.Rucempresa,
-                    Tipodocumentoid = request.Tipodocumentoid,
-                    Serie = request.Serie,
-                    Correlativo = request.Correlativo,
-                    Monedaid = request.Monedaid,
-                    Importe = request.Importe,
-                    Documentosemitidos = request.Documentosemitidos,
-                    Fechaemision = DateTime.Now,
-                    Fechaenvio = DateTime.Now
-                };
+                    return valor;
+                }
 
-                    _bdContext.Seguimiento.Add(seguimiento);
-
-                    var valor = await _bdContext.SaveChangesAsync();
-
-                    if (valor > 0)
-                    {
-                        return Unit.Value;
-                    }
-
-                    throw new Exception("No se guardaron los cambios");
+                throw new Exception("No se guardaron los cambios");
             }
         }
-
     }
 }

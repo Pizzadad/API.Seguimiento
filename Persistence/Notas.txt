@@ -1,0 +1,1 @@
+﻿dotnet ef dbcontext scaffold --use-database-names --context BdContext "Server=DESKTOP-6U9O0NL;Database=DbSeguimiento;User Id=sa;Password=123456;" Microsoft.EntityFrameworkCore.SqlServer -o Domain --context-dir Context

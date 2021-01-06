@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -15,6 +16,7 @@ using Persistence;
 using MediatR;
 using Application.SeguimientoCRUD;
 using Microsoft.OpenApi.Models;
+using Persistence.Context;
 
 namespace API.Seguimiento
 {
@@ -35,7 +37,7 @@ namespace API.Seguimiento
                 opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
 
-            services.AddMediatR(typeof(SeguimientoGetAll.Handler).Assembly);
+            services.AddMediatR(Assembly.Load("Application"));
 
             services.AddControllers();
 
@@ -46,7 +48,6 @@ namespace API.Seguimiento
                     Title = "Seguimiento",
                     Version = "v1"
                 });
-                c.CustomSchemaIds(c => c.FullName);
             });
         }
 

@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Entities;
 using Application.SeguimientoCRUD;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace API.Seguimiento.Controllers
 {
@@ -22,16 +20,22 @@ namespace API.Seguimiento.Controllers
             _mediator = mediator;
         }
 
-        [HttpGet]
-        public async Task<ActionResult<List<Seguimientos>>> Get()
+        [HttpPost("RegistrarSeguimiento")]
+        [ProducesResponseType(typeof(int), (int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
+        public async Task<ActionResult> Create(SeguimientoCreate data)
         {
-            return await _mediator.Send(new SeguimientoGetAll.GetAll());
-        }
-
-        [HttpPost]
-        public async Task<ActionResult<Unit>> Create(SeguimientoCreate.Create data)
-        {
-            return await _mediator.Send(data);
+            try
+            {
+                var id = await _mediator.Send(data);
+                return Ok(id);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
         }
     }
 }
