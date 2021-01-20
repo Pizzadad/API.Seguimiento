@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Application</name>
+    </assembly>
+    <members>
+        <member name="P:Application.SeguimientoCRUD.SeguimientoCreate.correlativo">
+            <summary>
+            Correlativo del documento electronico
+            </summary>
+        </member>
+        <member name="P:Application.SeguimientoCRUD.SeguimientoCreate.documentosemitidos">
+            <summary>
+            Cantidad de CPE que se incluyen en el archivo XML. Ejem: si es factura es 1, si es guia remision es 1, si es resumen va las boletas que estan dentro del resumen
+            </summary>
+        </member>
+        <member name="P:Application.SeguimientoCRUD.SeguimientoCreate.fechaemision">
+            <summary>
+            Fecha de emisión del documento electronico
+            </summary>
+        </member>
+        <member name="P:Application.SeguimientoCRUD.SeguimientoCreate.importe">
+            <summary>
+            Importe que represetna, si es resumen o un cpe que no tenga importe dejar en blanco
+            </summary>
+        </member>
+        <member name="P:Application.SeguimientoCRUD.SeguimientoCreate.monedaid">
+            <summary>
+            1=PEN, 2=USD
+            </summary>
+        </member>
+        <member name="P:Application.SeguimientoCRUD.SeguimientoCreate.pcname">
+            <summary>
+            (Opcional) Nombre del pc desde donde se emitio el cpe.
+            </summary>
+        </member>
+        <member name="P:Application.SeguimientoCRUD.SeguimientoCreate.rucempresa">
+            <summary>
+            RUC de la empresa emisora del documento
+            </summary>
+        </member>
+        <member name="P:Application.SeguimientoCRUD.SeguimientoCreate.serie">
+            <summary>
+            Serie del documento electronico
+            </summary>
+        </member>
+        <member name="P:Application.SeguimientoCRUD.SeguimientoCreate.tipodoc">
+            <summary>
+            Tipo de documento electrónico.
+            </summary>
+        </member>
+        <member name="P:Application.SeguimientoCRUD.SeguimientoCreate.urlservice">
+            <summary>
+            URL del servicio web a donde se envía el XML.
+            </summary>
+        </member>
+        <member name="P:Application.SeguimientoCRUD.SeguimientoCreate.username">
+            <summary>
+            (Opcional) Nombre o identificador unico del usuario que ejecuta la accion de envio
+            </summary>
+        </member>
+        <member name="P:Application.SeguimientoCRUD.SeguimientoCreate.xmlbinary">
+            <summary>
+            Archivo XML que se esta enviando.
+            </summary>
+        </member>
+        <member name="P:Application.SeguimientoCRUD.SeguimientoCreate.Estado">
+            <summary>
+            Estado de respuesta de Sunat/OSE.
+            </summary>
+        </member>
+        <member name="P:Application.SeguimientoCRUD.SeguimientoCreate.nombrearchivo">
+            <summary>
+            Nombre del archivo enviado.
+            </summary>
+        </member>
+    </members>
+</doc>

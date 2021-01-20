@@ -43,5 +43,26 @@ namespace API.Seguimiento.Controllers
                 throw;
             }
         }
+
+        [HttpPost("RegistrarSeguimientoIntegracion")]
+        [ProducesResponseType(typeof(int), (int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
+        public async Task<ActionResult> CreateFromIntegracion(SeguimientoCreate data)
+        {
+            try
+            {
+                _logger.LogInformation($"RegistrarSeguimientoIntegracion>> {data.rucempresa}-{data.fechaemision}-{data.tipodoc}-{data.serie}-{data.correlativo} ({data.documentosemitidos})");
+                data.esdeintegracion = true;
+                var id = await _mediator.Send(data);
+                return Ok(id);
+            }
+            catch (Exception e)
+            {
+                LocalExceptionLogger.EscribirLog(e);
+                Console.WriteLine(e);
+                throw;
+            }
+        }
     }
 }

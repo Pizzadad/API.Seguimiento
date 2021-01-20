@@ -21,5 +21,7 @@ namespace Persistence.Domain
         public byte[] xmlbinary { get; set; }
         public string urlservice { get; set; }
         public string estadoenvio { get; set; }
+        public string nombrearchivo { get; set; }
+        public string esdeintegracion { get; set; }
     }
 }
