@@ -88,6 +88,11 @@ namespace Application.SeguimientoCRUD
         public string nombrearchivo { get; set; }
         [JsonIgnore]
         public bool esdeintegracion { get; set; }
+        /// <summary>
+        /// Indica el tipo de servicio por el cual el cliente envio el CPE. EJEM: Contasol, Factesol Web, Factesol Movil, Integracion, etc.
+        /// </summary>
+        [MaxLength(150, ErrorMessage = "Máximo de 150 caracteres")]
+        public string tiposervicio { get; set; }
 
         public class Handler : IRequestHandler<SeguimientoCreate, int>
         {

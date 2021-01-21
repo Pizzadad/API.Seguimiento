@@ -74,5 +74,10 @@
             Nombre del archivo enviado.
             </summary>
         </member>
+        <member name="P:Application.SeguimientoCRUD.SeguimientoCreate.tiposervicio">
+            <summary>
+            Indica el tipo de servicio por el cual el cliente envio el CPE. EJEM: Contasol, Factesol Web, Factesol Movil, Integracion, etc.
+            </summary>
+        </member>
     </members>
 </doc>
