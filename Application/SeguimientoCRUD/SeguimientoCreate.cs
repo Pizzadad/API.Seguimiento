@@ -75,7 +75,7 @@ namespace Application.SeguimientoCRUD
         /// <summary>
         /// Archivo XML que se esta enviando.
         /// </summary>
-        [Length(100)]
+        [Length(1024, ErrorMessage = "Peso máximo 1MB")]
         public byte[] xmlbinary { get; set; }
         /// <summary>
         /// Estado de respuesta de Sunat/OSE.

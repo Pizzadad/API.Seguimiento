@@ -22,7 +22,7 @@ namespace Persistence.Domain
         public string urlservice { get; set; }
         public string estadoenvio { get; set; }
         public string nombrearchivo { get; set; }
-        public string esdeintegracion { get; set; }
+        public bool esdeintegracion { get; set; }
         public string tiposervicio { get; set; }
     }
 }

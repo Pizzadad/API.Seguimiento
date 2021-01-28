@@ -29,7 +29,11 @@ namespace Common
         /// <summary>
         /// RESUMEN
         /// </summary>
-        RES = 6
+        RES = 6,
+        /// <summary>
+        /// Documento de baja
+        /// </summary>
+        BAJ = 7
     }
 
     public enum EstadoSunat : byte
