@@ -94,6 +94,8 @@ namespace Application.SeguimientoCRUD
         [MaxLength(150, ErrorMessage = "Máximo de 150 caracteres")]
         public string tiposervicio { get; set; }
 
+        public string mensajesunat { get; set; }
+
         public class Handler : IRequestHandler<SeguimientoCreate, int>
         {
             private readonly BdContext _bdContext;

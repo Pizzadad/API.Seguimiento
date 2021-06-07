@@ -111,7 +111,7 @@ namespace API.Seguimiento
             loggerFactory.AddSyslog(
                 Configuration.GetValue<string>("Papertrail:host"),
                 Configuration.GetValue<int>("Papertrail:port"));
-
+            
             app.UseRouting();
 
             app.UseAuthorization();

@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Invoice xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2">
+	<ext:UBLExtensions>
+		<ext:UBLExtension>
+			<ext:ExtensionContent>
+				<ds:Signature Id="SignatureSP">
+					<SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+						<CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+						<SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+						<Reference URI="">
+							<Transforms>
+								<Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+							</Transforms>
+							<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+							<DigestValue>KO7QBbafNYNF3PfHajRXu8ves0I=</DigestValue>
+						</Reference>
+					</SignedInfo>
+					<SignatureValue xmlns="http://www.w3.org/2000/09/xmldsig#">QoIDUneDLL8aFlDfBj1lHShjfodDftOET4TSztbaM3EhDUKAab1B2nxrPIa8Bq3exHxw2IwWuOJZlCtzVrQCZMLnZWeUzxKtGEHb1vD9DLkebDiTJq1G7LpQ2/H2VkzTf0L8UgtjZC335DxPNtb2m/kbjM6eGFhCozvMzTy+IR7qc3VlsgpAOzPB8CGczKwcQWnHtm6LkRyTWI68DbCDgkFp+KAc2IecbTzHIONI7r6e6+YphODfSKaVs+Zwa5/kLimMOeLjp3ZImEFTilvXk0A8ncEN2QwIRW5CL96WegDqsso3Q+2PjEPxK4SMydXvRrNOduchoQqMb1RWfFmYbw==</SignatureValue>
+					<KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+						<X509Data>
+							<X509Certificate>MIIFrzCCBJegAwIBAgIIDbm9hDe4HxUwDQYJKoZIhvcNAQELBQAwRjEkMCIGA1UEAwwbTGxhbWEucGUgU0hBMjU2IFN0YW5kYXJkIENBMREwDwYDVQQKDAhMTEFNQS5QRTELMAkGA1UEBhMCUEUwHhcNMjAwOTA1MjIyNTAyWhcNMjEwOTA1MjIyNTAwWjCCAUwxRjBEBgNVBAkMPUNBTC4gQkVSTkFSRE8gT0hJR0dJTlMgTlJPLiA4OTkgSU5ULiA1MDUgLSBMSU1BIExJTUEgUFVFQkxPIEwxKzApBgkqhkiG9w0BCQEWHGZhY3Rlc29sQHRpc29sdWNpb25lcy5uZXQucGUxKTAnBgNVBAMMIExBIFRPUlJFIFJVSVogRU5SSVFVRSBCRVJOQVJESU5PMREwDwYDVQQFEwgwNzI2NzA0OTEtMCsGA1UECwwkRkFDVFVSQSBFTEVDVFJPTklDQSBSVUM6IDIwNjAwMDU1NTE5MSEwHwYDVQQLDBhWYWxpZGF0ZWQgYnkgTGxhbWEucGUgRVIxKTAnBgNVBAoMIFRJIFNPTFVDSU9ORVMgREUgTkVHT0NJT1MgUy5BLkMuMQ0wCwYDVQQHDARMSU1BMQswCQYDVQQGEwJQRTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMLnaM052zyMj4wmht2jGCwLatJt0vGDrVvJGs91N+ze/tbEwPJBPSZIIfz+4SNflA2Jbkxs8ajJe2lVS7tVimhQS0p8/cm1QHxRMKUFFnY+p0ipEgTdmXUjBhfu5LQovrL4a3OnrnzgSO4yMEce5JbAZJ0cIxp3YFZeb0X12Qql3z/PcYM6Yfi+CgHobPY7AuYD99zK7B6+tlBNWV6E5PyFhr8fM7MP77s+IKHy1XbBaeAwzJIItuXLN5Bbafl9Qr0y8KmrhNvXIJLc/gPNx37VmE1cIdAA/BczZ4zE+VQJvuoZ7vucGcZAa4a5QpnHyg4pczpbd2ozbHu1L2nYDYcCAwEAAaOCAZcwggGTMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUXYhbretl+/5oouTZbz1XcqLvK5kwZwYIKwYBBQUHAQEEWzBZMDUGCCsGAQUFBzAChilodHRwOi8vY3J0LmxsYW1hLnBlL2xsYW1hcGVzdGFuZGFyZGNhLmNlcjAgBggrBgEFBQcwAYYUaHR0cDovL29jc3AubGxhbWEucGUwJwYDVR0RBCAwHoEcZmFjdGVzb2xAdGlzb2x1Y2lvbmVzLm5ldC5wZTBGBgNVHSAEPzA9MDsGDSsGAQQBg5d3AAEAAgEwKjAoBggrBgEFBQcCARYcaHR0cHM6Ly9sbGFtYS5wZS9yZXBvc2l0b3J5LzAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwQwOgYDVR0fBDMwMTAvoC2gK4YpaHR0cDovL2NybC5sbGFtYS5wZS9sbGFtYXBlc3RhbmRhcmRjYS5jcmwwHQYDVR0OBBYEFFoOLqKgUhWNDarfmDGVk/LZ76F+MA4GA1UdDwEB/wQEAwIGwDANBgkqhkiG9w0BAQsFAAOCAQEAprCncJl3riLVdZCDW4GMsqBS8JbbH3hX2sZ2j9zmz/KrqpILGzOILzauk3qISO+rv5B2LzpLEMURPMpzamTNdpkET8L8qDMixikcrJONFzX5QXK7sioj7FXidU12MGqcda7C4z1d7OgSILFMNbJw69nMlI1pWeufrYNLdx7ED5qq8w2M4cn+8Zx5R+tIBJZt2kWOkAp/tfb6hLb+oDOYrV3VQtNxXXi+NkatnWJPyuDWXDFE3Ukbumwwo3ifwFmkCZwAgkPTbYAlQzQEICRb40zpuD5qQQhooUialw0sxURgShU07o1r6QluT0FpNbHgZLmcleZRXWWZIhbzqKGerw==</X509Certificate>
+						</X509Data>
+					</KeyInfo>
+				</ds:Signature>
+			</ext:ExtensionContent>
+		</ext:UBLExtension>
+	</ext:UBLExtensions>
+	<cbc:UBLVersionID>2.1</cbc:UBLVersionID>
+	<cbc:CustomizationID>2.0</cbc:CustomizationID>
+	<cbc:ID>FA01-00000449</cbc:ID>
+	<cbc:IssueDate>2021-04-20</cbc:IssueDate>
+	<cbc:InvoiceTypeCode listID="0101">01</cbc:InvoiceTypeCode>
+	<cbc:Note languageLocaleID="1000">QUINIENTOS SESENTA CON 00/100</cbc:Note>
+	<cbc:DocumentCurrencyCode>PEN</cbc:DocumentCurrencyCode>
+	<cac:DespatchDocumentReference>
+		<cbc:ID>002-006309</cbc:ID>
+		<cbc:DocumentTypeCode>09</cbc:DocumentTypeCode>
+	</cac:DespatchDocumentReference>
+	<cac:Signature>
+		<cbc:ID>IDSignSP</cbc:ID>
+		<cac:SignatoryParty>
+			<cac:PartyIdentification>
+				<cbc:ID>20602375987</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>NEGOCIACIONES BALLARTA EMPRESA INDIVIDUAL DE RESPONSABILIDAD LIMITADA</cbc:Name>
+			</cac:PartyName>
+		</cac:SignatoryParty>
+		<cac:DigitalSignatureAttachment>
+			<cac:ExternalReference>
+				<cbc:URI>#SignatureSP</cbc:URI>
+			</cac:ExternalReference>
+		</cac:DigitalSignatureAttachment>
+	</cac:Signature>
+	<cac:AccountingSupplierParty>
+		<cac:Party>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="6">20602375987</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>-</cbc:Name>
+			</cac:PartyName>
+			<cac:PartyLegalEntity>
+				<cbc:RegistrationName>NEGOCIACIONES BALLARTA EMPRESA INDIVIDUAL DE RESPONSABILIDAD LIMITADA</cbc:RegistrationName>
+				<cac:RegistrationAddress>
+					<cbc:ID>150103</cbc:ID>
+					<cbc:AddressTypeCode>0000</cbc:AddressTypeCode>
+					<cbc:StreetName>AV. VICTOR RAUL HAYA DE LA TORRE KM. 9.5 LIMA - LIMA - ATE</cbc:StreetName>
+					<cbc:CitySubdivisionName>-</cbc:CitySubdivisionName>
+					<cbc:CityName>LIMA</cbc:CityName>
+					<cbc:CountrySubentity>LIMA</cbc:CountrySubentity>
+					<cbc:District>ATE</cbc:District>
+					<cac:Country>
+						<cbc:IdentificationCode>PE</cbc:IdentificationCode>
+					</cac:Country>
+				</cac:RegistrationAddress>
+			</cac:PartyLegalEntity>
+		</cac:Party>
+	</cac:AccountingSupplierParty>
+	<cac:AccountingCustomerParty>
+		<cac:Party>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="6">20601159440</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyLegalEntity>
+				<cbc:RegistrationName>BROASTERIA EL VIEJO MADERO S.A.C.</cbc:RegistrationName>
+				<cac:RegistrationAddress>
+					<cbc:StreetName>PAS. LA BREÑA NRO. 125  JUNIN - HUANCAYO - HUANCAYO</cbc:StreetName>
+				</cac:RegistrationAddress>
+			</cac:PartyLegalEntity>
+		</cac:Party>
+	</cac:AccountingCustomerParty>
+	<cac:PaymentTerms>
+		<cbc:ID>FormaPago</cbc:ID>
+		<cbc:PaymentMeansID>Contado</cbc:PaymentMeansID>
+	</cac:PaymentTerms>
+	<cac:TaxTotal>
+		<cbc:TaxAmount currencyID="PEN">85.42</cbc:TaxAmount>
+		<cac:TaxSubtotal>
+			<cbc:TaxableAmount currencyID="PEN">474.58</cbc:TaxableAmount>
+			<cbc:TaxAmount currencyID="PEN">85.42</cbc:TaxAmount>
+			<cac:TaxCategory>
+				<cac:TaxScheme>
+					<cbc:ID>1000</cbc:ID>
+					<cbc:Name>IGV</cbc:Name>
+					<cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
+				</cac:TaxScheme>
+			</cac:TaxCategory>
+		</cac:TaxSubtotal>
+	</cac:TaxTotal>
+	<cac:LegalMonetaryTotal>
+		<cbc:LineExtensionAmount currencyID="PEN">474.58</cbc:LineExtensionAmount>
+		<cbc:TaxInclusiveAmount currencyID="PEN">560.00</cbc:TaxInclusiveAmount>
+		<cbc:PrepaidAmount currencyID="PEN">0</cbc:PrepaidAmount>
+		<cbc:PayableAmount currencyID="PEN">560</cbc:PayableAmount>
+	</cac:LegalMonetaryTotal>
+	<cac:InvoiceLine>
+		<cbc:ID>1</cbc:ID>
+		<cbc:InvoicedQuantity unitCode="ZZ">40</cbc:InvoicedQuantity>
+		<cbc:LineExtensionAmount currencyID="PEN">474.58</cbc:LineExtensionAmount>
+		<cac:PricingReference>
+			<cac:AlternativeConditionPrice>
+				<cbc:PriceAmount currencyID="PEN">560</cbc:PriceAmount>
+				<cbc:PriceTypeCode>01</cbc:PriceTypeCode>
+			</cac:AlternativeConditionPrice>
+		</cac:PricingReference>
+		<cac:TaxTotal>
+			<cbc:TaxAmount currencyID="PEN">85.42</cbc:TaxAmount>
+			<cac:TaxSubtotal>
+				<cbc:TaxableAmount currencyID="PEN">474.58</cbc:TaxableAmount>
+				<cbc:TaxAmount currencyID="PEN">85.42</cbc:TaxAmount>
+				<cac:TaxCategory>
+					<cbc:Percent>18</cbc:Percent>
+					<cbc:TaxExemptionReasonCode>10</cbc:TaxExemptionReasonCode>
+					<cac:TaxScheme>
+						<cbc:ID>1000</cbc:ID>
+						<cbc:Name>IGV</cbc:Name>
+						<cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
+					</cac:TaxScheme>
+				</cac:TaxCategory>
+			</cac:TaxSubtotal>
+		</cac:TaxTotal>
+		<cac:Item>
+			<cbc:Description>B6 POLLO BRASA</cbc:Description>
+			<cac:SellersItemIdentification>
+				<cbc:ID>P0001</cbc:ID>
+			</cac:SellersItemIdentification>
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="PEN">11.8600</cbc:PriceAmount>
+		</cac:Price>
+	</cac:InvoiceLine>
+</Invoice>

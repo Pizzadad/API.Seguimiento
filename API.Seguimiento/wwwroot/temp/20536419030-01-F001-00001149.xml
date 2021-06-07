@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Invoice xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2">
+	<ext:UBLExtensions>
+		<ext:UBLExtension>
+			<ext:ExtensionContent>
+				<ds:Signature Id="SignatureSP">
+					<SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+						<CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+						<SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+						<Reference URI="">
+							<Transforms>
+								<Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+							</Transforms>
+							<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+							<DigestValue>+m00ZmVIfWvIP7lgI1ni0RVbPLs=</DigestValue>
+						</Reference>
+					</SignedInfo>
+					<SignatureValue xmlns="http://www.w3.org/2000/09/xmldsig#">h/DzRICZ1scdQELatpDA/ndUhN4v7RCJc9Z7zwHWGe9VsbUP9bnfF6Weh56/mNCP8m9J4/5iBxhO4l1O64dfJ1KKdpOr4/RwAJTrlJ/R67i69PBUZ80Gyvn6Oi+5Bu/TcWV0bTyfNpipzE0ivQUWfis27pHXcAM7JzAivkvXPZs1DsVFn3Pd3ba5CSA8y6YurJHDDhwGwqZ95viT0AjuGQDpdEImKo0EzMjWe5RGX4KBWJOJRopJpP15DLajy7pcxt9qJVrk1AvS8x4Dega0xQ2bGACsC5rY/GpcbLdJ9Rk33Br+fRisRoK0KLdkxuT25rNLVRGYRz3/z/fvEsGWGw==</SignatureValue>
+					<KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+						<X509Data>
+							<X509Certificate>MIIFrzCCBJegAwIBAgIIDbm9hDe4HxUwDQYJKoZIhvcNAQELBQAwRjEkMCIGA1UEAwwbTGxhbWEucGUgU0hBMjU2IFN0YW5kYXJkIENBMREwDwYDVQQKDAhMTEFNQS5QRTELMAkGA1UEBhMCUEUwHhcNMjAwOTA1MjIyNTAyWhcNMjEwOTA1MjIyNTAwWjCCAUwxRjBEBgNVBAkMPUNBTC4gQkVSTkFSRE8gT0hJR0dJTlMgTlJPLiA4OTkgSU5ULiA1MDUgLSBMSU1BIExJTUEgUFVFQkxPIEwxKzApBgkqhkiG9w0BCQEWHGZhY3Rlc29sQHRpc29sdWNpb25lcy5uZXQucGUxKTAnBgNVBAMMIExBIFRPUlJFIFJVSVogRU5SSVFVRSBCRVJOQVJESU5PMREwDwYDVQQFEwgwNzI2NzA0OTEtMCsGA1UECwwkRkFDVFVSQSBFTEVDVFJPTklDQSBSVUM6IDIwNjAwMDU1NTE5MSEwHwYDVQQLDBhWYWxpZGF0ZWQgYnkgTGxhbWEucGUgRVIxKTAnBgNVBAoMIFRJIFNPTFVDSU9ORVMgREUgTkVHT0NJT1MgUy5BLkMuMQ0wCwYDVQQHDARMSU1BMQswCQYDVQQGEwJQRTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMLnaM052zyMj4wmht2jGCwLatJt0vGDrVvJGs91N+ze/tbEwPJBPSZIIfz+4SNflA2Jbkxs8ajJe2lVS7tVimhQS0p8/cm1QHxRMKUFFnY+p0ipEgTdmXUjBhfu5LQovrL4a3OnrnzgSO4yMEce5JbAZJ0cIxp3YFZeb0X12Qql3z/PcYM6Yfi+CgHobPY7AuYD99zK7B6+tlBNWV6E5PyFhr8fM7MP77s+IKHy1XbBaeAwzJIItuXLN5Bbafl9Qr0y8KmrhNvXIJLc/gPNx37VmE1cIdAA/BczZ4zE+VQJvuoZ7vucGcZAa4a5QpnHyg4pczpbd2ozbHu1L2nYDYcCAwEAAaOCAZcwggGTMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUXYhbretl+/5oouTZbz1XcqLvK5kwZwYIKwYBBQUHAQEEWzBZMDUGCCsGAQUFBzAChilodHRwOi8vY3J0LmxsYW1hLnBlL2xsYW1hcGVzdGFuZGFyZGNhLmNlcjAgBggrBgEFBQcwAYYUaHR0cDovL29jc3AubGxhbWEucGUwJwYDVR0RBCAwHoEcZmFjdGVzb2xAdGlzb2x1Y2lvbmVzLm5ldC5wZTBGBgNVHSAEPzA9MDsGDSsGAQQBg5d3AAEAAgEwKjAoBggrBgEFBQcCARYcaHR0cHM6Ly9sbGFtYS5wZS9yZXBvc2l0b3J5LzAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwQwOgYDVR0fBDMwMTAvoC2gK4YpaHR0cDovL2NybC5sbGFtYS5wZS9sbGFtYXBlc3RhbmRhcmRjYS5jcmwwHQYDVR0OBBYEFFoOLqKgUhWNDarfmDGVk/LZ76F+MA4GA1UdDwEB/wQEAwIGwDANBgkqhkiG9w0BAQsFAAOCAQEAprCncJl3riLVdZCDW4GMsqBS8JbbH3hX2sZ2j9zmz/KrqpILGzOILzauk3qISO+rv5B2LzpLEMURPMpzamTNdpkET8L8qDMixikcrJONFzX5QXK7sioj7FXidU12MGqcda7C4z1d7OgSILFMNbJw69nMlI1pWeufrYNLdx7ED5qq8w2M4cn+8Zx5R+tIBJZt2kWOkAp/tfb6hLb+oDOYrV3VQtNxXXi+NkatnWJPyuDWXDFE3Ukbumwwo3ifwFmkCZwAgkPTbYAlQzQEICRb40zpuD5qQQhooUialw0sxURgShU07o1r6QluT0FpNbHgZLmcleZRXWWZIhbzqKGerw==</X509Certificate>
+						</X509Data>
+					</KeyInfo>
+				</ds:Signature>
+			</ext:ExtensionContent>
+		</ext:UBLExtension>
+	</ext:UBLExtensions>
+	<cbc:UBLVersionID>2.1</cbc:UBLVersionID>
+	<cbc:CustomizationID>2.0</cbc:CustomizationID>
+	<cbc:ID>F001-00001149</cbc:ID>
+	<cbc:IssueDate>2021-03-31</cbc:IssueDate>
+	<cbc:InvoiceTypeCode listID="0101">01</cbc:InvoiceTypeCode>
+	<cbc:Note languageLocaleID="1000">CIENTO SETENTA Y SIETE CON 00/100 DÓLARES AMERICANOS</cbc:Note>
+	<cbc:DocumentCurrencyCode>USD</cbc:DocumentCurrencyCode>
+	<cac:Signature>
+		<cbc:ID>IDSignSP</cbc:ID>
+		<cac:SignatoryParty>
+			<cac:PartyIdentification>
+				<cbc:ID>20536419030</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>MGL INTERNATIONAL CARGO SAC</cbc:Name>
+			</cac:PartyName>
+		</cac:SignatoryParty>
+		<cac:DigitalSignatureAttachment>
+			<cac:ExternalReference>
+				<cbc:URI>#SignatureSP</cbc:URI>
+			</cac:ExternalReference>
+		</cac:DigitalSignatureAttachment>
+	</cac:Signature>
+	<cac:AccountingSupplierParty>
+		<cac:Party>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="6">20536419030</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>MGL INTERNATIONAL CARGO SAC</cbc:Name>
+			</cac:PartyName>
+			<cac:PartyLegalEntity>
+				<cbc:RegistrationName>MGL INTERNATIONAL CARGO SAC</cbc:RegistrationName>
+				<cac:RegistrationAddress>
+					<cbc:ID>150101</cbc:ID>
+					<cbc:AddressTypeCode>0000</cbc:AddressTypeCode>
+					<cbc:StreetName>[DIRECCIÓN]</cbc:StreetName>
+					<cbc:CitySubdivisionName>-</cbc:CitySubdivisionName>
+					<cbc:CityName>LIMA</cbc:CityName>
+					<cbc:CountrySubentity>LIMA</cbc:CountrySubentity>
+					<cbc:District>LIMA</cbc:District>
+					<cac:Country>
+						<cbc:IdentificationCode>PE</cbc:IdentificationCode>
+					</cac:Country>
+				</cac:RegistrationAddress>
+			</cac:PartyLegalEntity>
+		</cac:Party>
+	</cac:AccountingSupplierParty>
+	<cac:AccountingCustomerParty>
+		<cac:Party>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="6">20513151978</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyLegalEntity>
+				<cbc:RegistrationName>TRANSLOGISTICS S.A.C.</cbc:RegistrationName>
+				<cac:RegistrationAddress>
+					<cbc:StreetName>AV. ELMER FAUCETT NRO. 2851 DPTO. 316 OTR. CIUDAD SATELITE SANTA ROS CALLAO - CALLAO - CALLAO</cbc:StreetName>
+				</cac:RegistrationAddress>
+			</cac:PartyLegalEntity>
+		</cac:Party>
+	</cac:AccountingCustomerParty>
+	<cac:SellerSupplierParty>
+		<cbc:CustomerAssignedAccountID>V0001</cbc:CustomerAssignedAccountID>
+		<cac:Party>
+			<cac:PartyName>
+				<cbc:Name>OFICINA</cbc:Name>
+			</cac:PartyName>
+		</cac:Party>
+	</cac:SellerSupplierParty>
+	<cac:PaymentTerms>
+		<cbc:ID>FormaPago</cbc:ID>
+		<cbc:PaymentMeansID>Contado</cbc:PaymentMeansID>
+	</cac:PaymentTerms>
+	<cac:TaxTotal>
+		<cbc:TaxAmount currencyID="USD">27.00</cbc:TaxAmount>
+		<cac:TaxSubtotal>
+			<cbc:TaxableAmount currencyID="USD">150</cbc:TaxableAmount>
+			<cbc:TaxAmount currencyID="USD">27.00</cbc:TaxAmount>
+			<cac:TaxCategory>
+				<cbc:Percent>18</cbc:Percent>
+				<cbc:TaxExemptionReasonCode>10</cbc:TaxExemptionReasonCode>
+				<cac:TaxScheme>
+					<cbc:ID>1000</cbc:ID>
+					<cbc:Name>IGV</cbc:Name>
+					<cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
+				</cac:TaxScheme>
+			</cac:TaxCategory>
+		</cac:TaxSubtotal>
+	</cac:TaxTotal>
+	<cac:LegalMonetaryTotal>
+		<cbc:LineExtensionAmount currencyID="USD">150</cbc:LineExtensionAmount>
+		<cbc:TaxInclusiveAmount currencyID="USD">177.00</cbc:TaxInclusiveAmount>
+		<cbc:PayableAmount currencyID="USD">177.00</cbc:PayableAmount>
+	</cac:LegalMonetaryTotal>
+	<cac:InvoiceLine>
+		<cbc:ID>1</cbc:ID>
+		<cbc:InvoicedQuantity unitCode="NIU">1</cbc:InvoicedQuantity>
+		<cbc:LineExtensionAmount currencyID="USD">150</cbc:LineExtensionAmount>
+		<cac:PricingReference>
+			<cac:AlternativeConditionPrice>
+				<cbc:PriceAmount currencyID="USD">177</cbc:PriceAmount>
+				<cbc:PriceTypeCode>01</cbc:PriceTypeCode>
+			</cac:AlternativeConditionPrice>
+		</cac:PricingReference>
+		<cac:TaxTotal>
+			<cbc:TaxAmount currencyID="USD">27</cbc:TaxAmount>
+			<cac:TaxSubtotal>
+				<cbc:TaxableAmount currencyID="USD">150</cbc:TaxableAmount>
+				<cbc:TaxAmount currencyID="USD">27</cbc:TaxAmount>
+				<cac:TaxCategory>
+					<cbc:Percent>18</cbc:Percent>
+					<cbc:TaxExemptionReasonCode>10</cbc:TaxExemptionReasonCode>
+					<cac:TaxScheme>
+						<cbc:ID>1000</cbc:ID>
+						<cbc:Name>IGV</cbc:Name>
+						<cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
+					</cac:TaxScheme>
+				</cac:TaxCategory>
+			</cac:TaxSubtotal>
+		</cac:TaxTotal>
+		<cac:Item>
+			<cbc:Description>GESTION COMERCIAL</cbc:Description>
+			<cac:SellersItemIdentification>
+				<cbc:ID>N001-PE000001222</cbc:ID>
+			</cac:SellersItemIdentification>
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="USD">150</cbc:PriceAmount>
+		</cac:Price>
+	</cac:InvoiceLine>
+</Invoice>

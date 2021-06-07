@@ -4,6 +4,30 @@
         <name>Application</name>
     </assembly>
     <members>
+        <member name="T:Application.ConsultaCPE.InsertarDatosConsultaCPECommand">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Application.ConsultaCPE.CpeInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Application.ConsultaCPE.InsertarDatosConsultaCPEEventHandler">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Application.ConsultaCPE.InsertarDatosConsultaCPEEventHandler.Handle(Application.ConsultaCPE.InsertarDatosConsultaCPECommand,System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
         <member name="P:Application.SeguimientoCRUD.SeguimientoCreate.correlativo">
             <summary>
             Correlativo del documento electronico

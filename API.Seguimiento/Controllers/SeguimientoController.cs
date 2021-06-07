@@ -18,10 +18,10 @@ namespace API.Seguimiento.Controllers
         private readonly IMediator _mediator;
         private readonly ILogger<SeguimientoController> _logger;
 
-        public SeguimientoController(IMediator mediator, ILogger<SeguimientoController> logger)
+        public SeguimientoController(IMediator mediator, ILogger<SeguimientoController> apiseguimientoLogger)
         {
             _mediator = mediator;
-            _logger = logger;
+            _logger = apiseguimientoLogger;
         }
 
         [HttpPost("RegistrarSeguimiento")]

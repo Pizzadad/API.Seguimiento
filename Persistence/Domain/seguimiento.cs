@@ -24,5 +24,6 @@ namespace Persistence.Domain
         public string nombrearchivo { get; set; }
         public bool esdeintegracion { get; set; }
         public string tiposervicio { get; set; }
+        public string mensajesunat { get; set; }
     }
 }
