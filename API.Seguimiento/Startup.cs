@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using API.Seguimiento.Jobs;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -17,6 +18,8 @@ using Persistence;
 
 using MediatR;
 using Application.SeguimientoCRUD;
+using FirebaseAdmin;
+using Google.Apis.Auth.OAuth2;
 using Logger;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json.Converters;
@@ -42,6 +45,11 @@ namespace API.Seguimiento
             });
 
             services.AddMediatR(Assembly.Load("Application"));
+
+            services.AddHttpClient("FactesolMovilAPI", hc =>
+            {
+                hc.BaseAddress = new Uri("https://apimovil.factesol.net.pe:450/");
+            });
 
             services.AddControllers()
                 .AddJsonOptions(options2 =>
@@ -98,6 +106,10 @@ namespace API.Seguimiento
                 #endregion
 
             });
+
+#if !DEBUG
+            services.AddHostedService<FactesolMovilJob>();
+#endif
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -126,6 +138,12 @@ namespace API.Seguimiento
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "API Seguimiento v1");
             });
 
+            var root = env.WebRootPath;
+            var path = Path.Combine(root, "FactesolFacturadorFirebaseKey", "factesolfacturador-firebase-adminsdk.json");
+            FirebaseApp.Create(new AppOptions
+            {
+                Credential = GoogleCredential.FromFile(path)
+            });
         }
     }
 }

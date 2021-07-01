@@ -1,0 +1,8 @@
+2021-07-01T16:15:46.0979726-05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-07-01T16:15:46.1066108-05:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-07-01T16:15:46.1096154-05:00  [INF] Content root path: "C:\Users\eduar\Source\Repos\API.Seguimiento\API.Seguimiento" (b5d60022)
+2021-07-01T16:16:10.3175680-05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-07-01T16:16:10.3343745-05:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-07-01T16:16:10.3453572-05:00  [INF] Content root path: "C:\Users\eduar\Source\Repos\API.Seguimiento\API.Seguimiento" (b5d60022)
+2021-07-01T16:16:16.3619332-05:00  [INF] Received HTTP response after 6635.5272ms - OK (6350df9e)
+2021-07-01T16:16:16.3663800-05:00  [INF] End processing HTTP request after 6733.2402ms - OK (7656b38e)
