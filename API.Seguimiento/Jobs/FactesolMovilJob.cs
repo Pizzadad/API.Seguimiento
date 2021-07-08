@@ -17,6 +17,16 @@ namespace API.Seguimiento.Jobs
         private readonly ILogger<FactesolMovilJob> _logger;
         private readonly HttpClient _factesolMovilApi;
         private Timer _timer;
+        private readonly int[] _horasnotificacion = new[] {16, 23};
+
+        private int horaActualPeruana
+        {
+            get
+            {
+                var now = DateTime.UtcNow - TimeSpan.FromHours(5);
+                return now.Hour;
+            }
+        }
 
         public FactesolMovilJob(IHttpClientFactory factory, ILogger<FactesolMovilJob> logger)
         {
@@ -28,6 +38,8 @@ namespace API.Seguimiento.Jobs
         {
             try
             {
+                if (!_horasnotificacion.Contains(horaActualPeruana)) return;
+
                 var srtPendientes = await _factesolMovilApi.GetStringAsync("/api/v1/Jobs/ObtenerProximosVencimientos");
                 var pendientes = JsonConvert.DeserializeObject<ProximosVencimientos>(srtPendientes);
                 if(pendientes.HayPendientes)
@@ -61,7 +73,7 @@ namespace API.Seguimiento.Jobs
         public Task StartAsync(CancellationToken cancellationToken)
         {
             _timer = new Timer(DoWork, null, TimeSpan.Zero,
-                TimeSpan.FromDays(1));
+                TimeSpan.FromHours(1));
 
             return Task.CompletedTask;
         }
