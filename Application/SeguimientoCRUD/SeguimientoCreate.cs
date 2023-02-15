@@ -10,6 +10,10 @@ using Common;
 using Newtonsoft.Json;
 using Persistence.Context;
 using Persistence.Domain;
+using System.IO;
+using Microsoft.EntityFrameworkCore.Internal;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace Application.SeguimientoCRUD
 {
@@ -112,11 +116,23 @@ namespace Application.SeguimientoCRUD
                 if (e.documentosemitidos <= 0)
                     e.documentosemitidos = 1;
 
-                e.tipodocumentoid = request.tipodoc.ToString();
+                var td = request.tipodoc.ToString();
+
+                e.tipodocumentoid = td;
                 e.fechaenvio = DateTime.UtcNow - TimeSpan.FromHours(5);
                 e.estadoenvio = request.Estado.ToString();
                 if ((e.nombrearchivo ?? "").Length > 150)
                     e.nombrearchivo = (e.nombrearchivo ?? "").Substring(0, 150);
+
+                var existe = await _bdContext.seguimiento.AnyAsync(w =>
+                        w.tipodocumentoid == td &&
+                        w.rucempresa.Equals(request.rucempresa) &&
+                        w.mensajesunat.Equals(request.mensajesunat));
+
+                if (existe)
+                {
+                    throw new Exception("No se puede aceptar un doc. duplicado");
+                }
 
                 await _bdContext.seguimiento.AddAsync(e, cancellationToken);
 
@@ -126,6 +142,7 @@ namespace Application.SeguimientoCRUD
                 {
                     return e.id;
                 }
+
 
                 throw new Exception("No se guardaron los cambios");
             }
